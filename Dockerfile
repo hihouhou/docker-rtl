@@ -28,5 +28,10 @@ RUN wget https://github.com/Ride-The-Lightning/RTL/archive/v${RTL_VERSION}.tar.g
     cd RTL-${RTL_VERSION} && \
     npm install --only=prod
 
+WORKDIR /RTL-${RTL_VERSION}
+
+# Copy config file
+COPY RTL-Config.json /RTL-${RTL_VERSION}/RTL-Config.json
+
 # Let's GO!!
 CMD ["node", "rtl"]
