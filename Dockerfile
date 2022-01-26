@@ -9,14 +9,14 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV RTL_VERSION v0.12.0
+ENV RTL_VERSION 0.12.0
 
 # Update & install packages
 RUN apt-get update && \
     apt-get install -y gnupg git curl apt-transport-https wget
 
 #Add yarn repository
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - 
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - 
 
 # Update & install packages
 RUN apt-get update && \
