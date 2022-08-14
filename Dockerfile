@@ -9,7 +9,7 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV RTL_VERSION v0.12.3
+ENV RTL_VERSION v0.13.0
 
 # Update & install packages
 RUN apt-get update && \
