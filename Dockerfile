@@ -1,4 +1,4 @@
-#
+        #
 # rtl Dockerfile
 #
 # https://github.com/
@@ -26,15 +26,18 @@ RUN apt-get update && \
     apt-get install -y nodejs
 
 # Get rtl and install it
-RUN wget https://github.com/Ride-The-Lightning/RTL/archive/v${RTL_VERSION}.tar.gz && \
-    tar xf v${RTL_VERSION}.tar.gz && \
-    cd RTL-${RTL_VERSION} && \
+RUN wget https://github.com/Ride-The-Lightning/RTL/archive/${RTL_VERSION}.tar.gz && \
+    tar xf ${RTL_VERSION}.tar.gz && \
+    mv RTL-$(echo $RTL_VERSION | cut -c2-) RTL && \
+    cd RTL && \
     npm install --omit=dev --legacy-peer-deps
 
-WORKDIR /RTL-${RTL_VERSION}
+WORKDIR /RTL
+
+RUN pwd
 
 # Copy config file
-COPY RTL-Config.json /RTL-${RTL_VERSION}/RTL-Config.json
+COPY RTL-Config.json .
 
 # Let's GO!!
 CMD ["node", "rtl"]
