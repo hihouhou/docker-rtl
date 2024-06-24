@@ -9,7 +9,7 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV RTL_VERSION v0.15.1
+ENV RTL_VERSION v0.15.2
 ENV NODE_MAJOR=18
 
 # Update & install packages
