@@ -9,7 +9,7 @@ FROM debian:latest
 
 LABEL org.opencontainers.image.authors="hihouhou < hihouhou@hihouhou.com >"
 
-ENV RTL_VERSION=v0.15.4
+ENV RTL_VERSION=v0.15.5
 ENV NODE_MAJOR=18
 
 # Update & install packages
