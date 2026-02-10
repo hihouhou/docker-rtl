@@ -9,8 +9,8 @@ FROM debian:latest
 
 LABEL org.opencontainers.image.authors="hihouhou < hihouhou@hihouhou.com >"
 
-ENV RTL_VERSION=v0.15.6
-ENV NODE_MAJOR=18
+ENV RTL_VERSION=v0.15.8
+ENV NODE_MAJOR=22
 
 # Update & install packages
 RUN apt-get update && \
@@ -26,7 +26,7 @@ RUN apt-get update && \
     apt-get install -y nodejs
 
 # Get rtl and install it
-RUN wget https://github.com/Ride-The-Lightning/RTL/archive/${RTL_VERSION}.tar.gz && \
+RUN wget https://github.com/Ride-The-Lightning/RTL/archive/refs/tags/${RTL_VERSION}.tar.gz && \
     tar xf ${RTL_VERSION}.tar.gz && \
     mv RTL-$(echo $RTL_VERSION | cut -c2-) RTL && \
     cd RTL && \
